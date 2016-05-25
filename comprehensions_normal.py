@@ -1,91 +1,57 @@
 # Remove vowels from the sentence.
-my_list = ["List Comprehensions are the Greatest!"]
-string_list = ''.join(my_list)
-vowels = ['a', 'e', 'i', 'o', 'u']
-end = []
-for letter in string_list:
-    if letter not in vowels:
-        end.append(letter)
-        "".join(end)
-
-print("".join(end))
-#= =========================================
-# Remove vowels from the sentence.
 my_string = "List Comprehensions are the Greatest!"
+"".join(my_string)
 vowels = ['a', 'e', 'i', 'o', 'u']
+no_vowels = []
+for letter in my_string:
+    if letter not in vowels:
+        no_vowels.append(letter)
+        "".join(no_vowels)
+        print("".join(no_vowels))
 
-end = [letter for letter in my_string if letter not in vowels]
-print(end)
-print("".join(end))
+# no_vowels = [letter for letter in my_string if letter not in vowels]
 
 #= ========================================
-#Create list of water temps for each date
 import csv
 
-# each loop iteration over csv.DictReader file produces a dictionary from strings to strings. /
-#The keys are the names of the columns (from the first row of the file, which is skipped over), /
-# and the values are the data from the row being read.
+reader = csv.DictReader(open('water_data.csv'))
+for row in reader:
+    Celsius_temp = [(row["Water Temp"])]
+    print(" Date: ", row['Date'], "Water Temp:", row['Water Temp'])
 
-data_input = csv.DictReader(open("water_data.csv"))
-temp = int(row["water temp"])
-date = int(row["date"])
-
-print({}, {}.format(temp, date))
 #= ================================
 #Convert water temp to float
 import csv
-import math
-data_input = csv.DictReader(open("water_data.csv"))
-temp = int(row["water temp"])
-date = int(row["date"])
+reader = csv.DictReader(open("water_data.csv"))
+for row in reader:
+    temp = (row["Water Temp"])
+    float(temp)
+    temp_f = ["Water Temp:", float(temp)]
+#    print("Water Temp:", float(temp))
+#    print(temp_f)
 
-end = []
-for number in len(temp):
-    math.floor(number)
-    end.append(number)
-print(end)
-
-# for items in len(temp):
 #= ====================
 # Convert water temp from C to F
 import csv
-import math
-#!/usr/bin/env python
-data_input = csv.DictReader(open("water_data.csv"))
-Fahrenheit = 9.0/5.0 * Celsius + 32
-Celsius = int(row["water temp"])
-end = []
-
-for number in len(Celsius):
-    return(Fahrenheit)
-    end.append(number)
-print(end)
+reader = csv.DictReader(open("water_data.csv"))
+for row in reader:
+    Celsius_temp = [(row["Water Temp"])]
+    for item in Celsius_temp:
+        temp_Fahrenheit = [int(item * 1.8 + 32)]
+        print(temp_Fahrenheit)
 #= ================
 #Create dictionary with key = Date and value = Wave Height
 import csv
+reader = csv.DictReader(open("water_data.csv"))
+wave_height = (" Date: ", row['Date'], "Wave Height:", row['Wave Height'])
+#print(" Date: ", row['Date'], "Wave Height:", row['Wave Height'])
 
-data_input = csv.DictReader(open("water_data.csv"))
-
-date = int(row["date"])
-wave_height = int(row["wave height"])
-
-for day in date:
-print('{} : {}'.format(date, wave_height)
 
 #= ===========================
 #Create dictionary w/ average wave height per day
 import csv
 import math
 
-data_input = csv.DictReader(open("water_data.csv"))
-
-date = int(row["date"])
-wave_height = int(row["wave height"])
-wave_period = int(row["wave period"])
-avg_height = (math.floor(wave_height)/(math.floor(wave_period))
-
-for day in len(date):
-print('{} : {}'.format(date, avg_height)
 
 #= ===========================
 #Create a nested comprehension to get the average of the Homework 1 grades.
@@ -97,11 +63,13 @@ homework_dict = {'Gale': {'Homework 1': 88, 'Homework 2': 76},
 def average(scores):
     return sum(scores) / len(scores)
 
-sum = sum([homework_dict[r][1]for r in (0, 1, 2)])
-    return(sum/len[r1])
-    print(average(scores))
+#sum = sum([homework_dict[r][1]for r in (0, 1, 2)])
+#return(sum/len[r1])
+#print(average(scores))
 
 average(scores)
+
+#= ================
 
 
 
